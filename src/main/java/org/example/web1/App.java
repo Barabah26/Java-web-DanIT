@@ -23,6 +23,7 @@ public class App {
         handler.addServlet(new ServletHolder(calcServlet), "/calc");
         handler.addServlet(new ServletHolder(historyServlet), "/history");
 
+
         server.setHandler(handler);
 
         server.start();
