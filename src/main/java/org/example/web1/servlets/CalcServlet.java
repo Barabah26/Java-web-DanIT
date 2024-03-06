@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 public class CalcServlet extends HttpServlet {
 
@@ -38,7 +39,11 @@ public class CalcServlet extends HttpServlet {
             default -> throw new IllegalStateException("something unexpected");
         };
 
-        history.put(Item.make(x, y, z.result, z.show));
+        try {
+            history.put(Item.make(x, y, z.result, z.show));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
         String outcome = String.format("%d %s %d = %d", x, z.show, y, z.result);
 

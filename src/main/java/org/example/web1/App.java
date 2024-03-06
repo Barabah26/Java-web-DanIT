@@ -6,6 +6,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.example.web1.servlets.CalcServlet;
 import org.example.web1.servlets.HelloServlet;
 import org.example.web1.servlets.HistoryServlet;
+import org.example.web3sql1.Database;
 
 import javax.servlet.http.HttpServlet;
 
@@ -15,7 +16,7 @@ public class App {
 
         ServletContextHandler handler = new ServletContextHandler();
 
-        History history = new HistoryLive();
+        History history = new HistoryPostgres(Database.mkConn());
         HttpServlet calcServlet = new CalcServlet(history);
         HttpServlet historyServlet = new HistoryServlet(history);
 
