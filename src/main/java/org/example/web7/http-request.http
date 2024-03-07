@@ -1,0 +1,15 @@
+### calc add
+POST http://localhost:8080/calc?x=50&y=10&op=add
+
+### calc sub
+POST http://localhost:8080/calc?x=50&y=10&op=sub
+
+### calc mul
+POST http://localhost:8080/calc?x=50&y=10&op=mul
+
+### calc div
+POST http://localhost:8080/calc?x=50&y=10&op=div
+
+### history
+GET http://localhost:8080/history
+

@@ -1,9 +1,8 @@
-package org.example.web6;
+package org.example.web6sql;
 
 import org.example.web3sql1.Database;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Savepoint;
 
